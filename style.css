@@ -6,12 +6,17 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.hidde{
+    display: none;
+}
+
 .tabuleiro{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:#000 url(stars.png) repeat top center;
+    background:#000 url(Images/stars.png) repeat top center;
     z-index:0;
 }
 
@@ -31,6 +36,8 @@
 }
 
 .painel2{
+    display: flex;
+    flex-direction: column;
     margin-left: 200px;
     background-color: rgba(31,31,31,0.4);
     color: white;
@@ -39,13 +46,39 @@
     box-shadow: 0px 0px 20px rgb(255, 231, 125);
 }
 
-.music{
-    display: none;
+.estatistica{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 4%;
+    display: flex;
+    margin-top: 50px;
+    width:900px;
+    height: 90px;
+    background-color: rgba(31,31,31,0.4);
+    box-shadow: 0px 0px 20px rgb(255, 231, 125);
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
 }
 
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.estatisticaPecas{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 0.5px solid white;
+  height: 90px; 
+  width: 14%;
+}
+
+.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music{
+    display: none;
 }
 
 @keyframes move-clouds-back {
@@ -64,11 +97,9 @@
   display:block;
 }
 
-
-
 .clouds{
-    background:transparent url(clouds.png) repeat top center;
-    opacity: .3;
+    background:transparent url(Images/clouds.png) repeat top center;
+    opacity: .25;
     animation:move-clouds-back 200s linear infinite;
 }
 
@@ -90,5 +121,157 @@
 }
 
 .jogar:hover{
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.Game{
+  height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.infoStats{
+  border-radius: 7px;
+  display:none;
+  color: white;
+  box-shadow: 0px 0px 20px rgb(255, 231, 125);
+  border: 0.5px solid white;
+  background-color: rgba(31,31,31,0.8);
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  height: 500px;
+  width: 900px;
+}
+
+.gameOverr{
+  position:absolute;
+  top:29%;
+}
+
+.iniciaiss{
+  position:absolute;
+  bottom:45%;
+}
+
+.iniciais{
+  position:absolute;
+  bottom:40%;
+}
+
+.scoree{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.scoreTitle{
+  margin-bottom: 50px;
+}
+
+.scoreee{
+  margin-bottom: 20px;
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rank{
+  border: 2px solid white;
+  color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px rgb(255, 231, 125);
+  background-color: rgba(31,31,31,0.8);
+  height: 500px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pontuacoes{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p{
+  padding-bottom: 60px;
+}
+
+.nomes{
+  width:60px;
+  height: 20px;
+}
+
+.posicoes{
+  display: flex;
+}
+
+@media (max-width: 1080px){
+  .infoStats{
+    border-radius: 7px;
+    display:none;
+    color: white;
+    box-shadow: 0px 0px 20px rgb(255, 231, 125);
+    border: 0.5px solid white;
+    background-color: rgba(31,31,31,0.8);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    height: 500px;
+    width: 900px;
+  }
+}
+
+@media (max-width: 1756px){
+  .infoStats{
+    width: 600px;
+  }
+  .rank{
+    width: 600px;
+  }
+}
+
+@media (max-width: 1430px){
+  .painel2{
+    margin-left: 100px;
+  }
+  .info{
+    margin-right: 100px;
+  }
+}
+
+@media (max-height: 870px){
+  .estatistica{
+    height: 60px;
+  }
+  .estatisticaPecas{
+    border-right: none;
+  }
+  .iniciaiss{
+    bottom: 40%;
+  }
+  .iniciais{
+    bottom: 30%;
+  }
+  .gameOverr{
+    top: 16%;
+  }
+}
+
+@media (max-height: 740px){
+  .estatistica{
+    bottom: 1%;
+  }
 }

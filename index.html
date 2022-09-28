@@ -7,39 +7,158 @@
 	<title>Tetris</title>
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+	
 	<div class="stars"></div>
        <div class="clouds"></div>
        <div class="title">
     </div>
+	
 	<div class="tabuleiro">
-		<div class="info" style="width:200px; height: 400px;">
-			<div class="nivel">
-				NÍVEL:
+		<!--INÍCIO DIV MAIN-->
+		<div style="display: flex; align-items: center;">
+			<!--Painel Esquerdo-->
+			<div id="info" class="info" style="width:200px; height: 400px;">
+				<div class="nivel">
+					NÍVEL:
+				</div>
+				<div id="nivelNumber">
+					1
+				</div>
+				<div class="pontos" class="dados">
+					PONTOS:
+				</div>
+				<div id="score">
+					0
+				</div>
+				<div class="linhasEliminadas" class="painel">
+					LINHAS ELIMINADAS:
+				</div>
+				<div id="linhasEliminadas">
+					0
+				</div>
 			</div>
-			<div id="nivelNumber">
-				1
+			<!--FIM Painel Esquerdo-->
+			
+			<!--Tabuleiro Tetris-->
+			<canvas id="tela" class="" width="250" height="500" style="border: 4px solid white; box-shadow: 0px 0px 20px rgb(255, 231, 125);"></canvas>
+			<!--FIM Tabuleiro Tetris-->
+
+			<!--Tela Game Over-->
+			<div id="Game" class="Game, hidde">
+				<div class="infoStats">
+					<h1 class="gameOverr">GAME OVER</h1>
+					<div class="scoree">
+					<h2 class="scoreTitle">SEU SCORE:</h2>
+					<p id="scoreGameOver" class="scoreee"></p>
+					</div>
+					<h2 class="iniciaiss">INFORME SUAS INICIAIS:</h2>
+					<div class="iniciais">
+						<input id="iniciais" maxlength="3" type="text" placeholder="Iniciais">
+						<button class="enviar" onclick="bubbleSort(vetor)">Enviar</button>
+					</div>
+				</div>
 			</div>
-			<div class="pontos" class="dados">
-				PONTOS:
+				<!--Fim Tela Game Over-->
+
+				<!--Tela Rank-->
+			<div id="Rank" class="container, hidde">
+				<div class="rank">
+					<h1 class="titulo" style="margin-top: 40px;"> RANK</h1>
+					<div class="pontuacoes">
+						<h2 style="margin-bottom: 40px;"> Maiores pontuações:</h2>
+						<div class="pPosicao, posicoes">
+							<p class="p">1)</p>
+							<div id="nome1" class="nomes"></div>
+							<div id="pt1" class="pontos1"></div>
+						</div>
+						<div class="sPosicao, posicoes">
+							<p class="p">2)</p>
+							<div id="nome2" class="nomes"></div>
+							<div id="pt2" class="pontos2"></div>
+						</div>
+						<div class="tPosicao, posicoes">
+							<p class="p">3)</p>
+							<div id="nome3" class="nomes"></div>
+							<div id="pt3" class="pontos3"></div>
+						</div>
+						<div class="qPosicao, posicoes">
+							<p class="p">4)</p>
+							<div id="nome4" class="nomes"></div>
+							<div id="pt4" class="pontos3"></div>
+						</div>
+						<div class="quiPosicao, posicoes">
+							<p class="p">5)</p>
+							<div id="nome5" class="nomes"></div>
+							<div id="pt5" class="pontos3"></div>
+						</div>
+					</div>
+				</div>
+			</div>  
+			<!--FIM Tela Game Over-->
+
+			<!--Painel Direito-->
+			<div id="painel2" class="painel2" style="width:200px; height: 400px;">
+				<div id ="nextTetromino1" class="next" style="width:200px; height: 200px; border-bottom: 1px solid white;">
+					<img id="next1" src="" alt="">
+				</div>
+				<div id ="nextTetromino2" class="next" style="width:200px; height: 200px;border-bottom: 1px solid white;">
+					<img id="next2" src="" alt="">
+				</div>
+				<div id ="nextTetromino3" class="next" style="width:200px; height: 200px;">
+					<img id="next3" src="" alt="">
+				</div>
 			</div>
-			<div id="score">
-				0
-			</div>
-			<div class="linhasEliminadas" class="painel">
-				LINHAS ELIMINADAS:
-			</div>
-			<div id="linhasEliminadas">
-				0
-			</div>
+			<!--FIM Painel Direito-->
+
 		</div>
+		<!--FIM DIV MAIN-->
 		
-		<canvas id="tela" width="300" height="600" style="border: 4px solid white; box-shadow: 0px 0px 20px rgb(255, 231, 125);"></canvas>
-
-		<div class="painel2" style="width:200px; height: 200px;">
-		<button  id="jogar" class="jogar" onclick="start();">Jogar</button>
+		<!--Contagem Peças-->
+		<div class="hidde" id="estatisticaa">
+			<div class="estatistica">
+				<div class="Z, estatisticaPecas">
+					<img src="Images/Z.png" alt="">
+					:
+					<div id="qtdZ"></div>	
+				</div>
+				<div class="S, estatisticaPecas">
+					<img src="Images/S.png" alt="">
+					:
+					<div id="qtdS"></div>
+				</div>
+				<div class="T, estatisticaPecas">
+					<img src="Images/T.png" alt="">
+					:
+					<div id="qtdT"></div>
+				</div>
+				<div class="O, estatisticaPecas">
+					<img src="Images/O.png" alt="">
+					:
+					<div id="qtdO"></div>
+				</div>
+				<div class="L, estatisticaPecas">
+					<img src="Images/L.png" alt="">
+					:
+					<div id="qtdL"></div>
+				</div>
+				<div class="I, estatisticaPecas">
+					<img src="Images/I.png" alt="">
+					:
+					<div id="qtdI"></div>
+				</div>
+				<div class="J, estatisticaPecas">
+					<img src="Images/J.png" alt="">
+					:
+					<div id="qtdJ"></div>
+				</div>
+			</div>
 		</div>
+		<!--FIM Contagem Peças-->
 
+		<button  id="jogar" class="jogar" onclick="start();">Jogar</button>
+		
 		<!--Áudios-->
 		<audio id="linhasremovidas">
 			<source src="Sounds/soundClear.mp3" type="audio/mpeg">
@@ -47,11 +166,24 @@
 		<audio id="gameOver">
 			<source src="Sounds/GameOver.mp3" type="audio/mpeg">
 		</audio>
-		<audio id="startGame">
+		<audio id="startGame" loop="loop">
 			<source src="Sounds/startGame.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="levelUp">
+			<source src="Sounds/LevelUp.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="fall">
+			<source src="Sounds/fall.wav" type="audio/mpeg">
+		</audio>
+		<audio id="move">
+			<source src="Sounds/move.wav" type="audio/mpeg">
+		</audio>
+		<audio id="rotate">
+			<source src="Sounds/rotate.wav" type="audio/mpeg">
 		</audio>
 		<!--Fim Áudios-->
 	</div>
 <script src="script.js"></script>
 </body>
+
 </html>
