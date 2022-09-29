@@ -266,25 +266,25 @@ var next3 = document.getElementById("next3");
 
 function nextPiece(r,p){
     if(todasPecas[r] == 0){
-        p.setAttribute('src', 'Z.png')
+        p.setAttribute('src', "Images/Z.png")
     }
     else if(todasPecas[r] == 1){
-        p.setAttribute('src', 'S.png')
+        p.setAttribute('src', "Images/S.png")
     }
     else if(todasPecas[r] == 2){
-        p.setAttribute('src', 'T.png')
+        p.setAttribute('src', "Images/T.png")
     }
     else if(todasPecas[r] == 3){
-        p.setAttribute('src', 'O.png')
+        p.setAttribute('src', "Images/O.png")
     }
     else if(todasPecas[r] == 4){
-        p.setAttribute('src', 'L.png')
+        p.setAttribute('src', "Images/L.png")
     }
     else if(todasPecas[r] == 5){
-        p.setAttribute('src', 'I.png')
+        p.setAttribute('src', "Images/I.png")
     }
     else{
-        p.setAttribute('src', 'J.png')
+        p.setAttribute('src', "Images/J.png")
     }
 }
 
